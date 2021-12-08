@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Inform_BusRoute</string>
+    <string-array name="prefectures">
+        <item>富山県</item>
+        <item>石川県</item>
+        <item>福井県</item>
+    </string-array>
+
+</resources>

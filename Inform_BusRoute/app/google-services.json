@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "165627567243",
+    "project_id": "bus-route-univtoyama",
+    "storage_bucket": "bus-route-univtoyama.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165627567243:android:123a7e4230cdb7dadd088e",
+        "android_client_info": {
+          "package_name": "com.univ.toyama.bus_route_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165627567243-2ulbl8g5e5u6j1doiro01itah9b4nej5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmeWol6PmGw61xE3Mb83D35qu_V6RhvzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165627567243-2ulbl8g5e5u6j1doiro01itah9b4nej5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165627567243:android:631c99c393d60bc5dd088e",
+        "android_client_info": {
+          "package_name": "com.univ.toyama.inform_busroute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165627567243-2ulbl8g5e5u6j1doiro01itah9b4nej5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmeWol6PmGw61xE3Mb83D35qu_V6RhvzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165627567243-2ulbl8g5e5u6j1doiro01itah9b4nej5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
