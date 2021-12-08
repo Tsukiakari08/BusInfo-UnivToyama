@@ -61,7 +61,6 @@ public class Display_Times extends AppCompatActivity implements Async_Callback{
                             Log.d("List Error", "Empty List");
                         } else {
                             common.setTime_list(list);
-                            Log.d("AAAAA",common.getTime_list().get(0));
                             adapter = new ArrayAdapter<>(Display_Times.this,
                                     android.R.layout.simple_list_item_1, common.getTime_list());
 
