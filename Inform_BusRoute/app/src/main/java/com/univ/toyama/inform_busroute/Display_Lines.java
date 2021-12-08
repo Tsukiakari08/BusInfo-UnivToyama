@@ -14,6 +14,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 public class Display_Lines extends AppCompatActivity implements Async_Callback{
+    public static final int DIRECTION = 2;
+    public static final int LINE_TO_PLACE = 3;
+
     public ListView listView;
     Common common;
 
@@ -42,7 +45,7 @@ public class Display_Lines extends AppCompatActivity implements Async_Callback{
 
             if(common.getLine_name() != common.getCurrent_str()) {
                 common.setCurrent_str(string);
-                common.setState(2);
+                common.setState(DIRECTION);
 
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 GetData_Firestore data = new GetData_Firestore(db);
@@ -54,7 +57,7 @@ public class Display_Lines extends AppCompatActivity implements Async_Callback{
                         } else {
                             common.setDirection_list(list);
                             common.setDirection(common.getDirection_list().get(0));
-                            common.setState(3);
+                            common.setState(LINE_TO_PLACE);
 
                             data.getDataList(common, new Async_Callback() {
                                 public void sendData(List<String> list) {

@@ -18,6 +18,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class Display_Places extends AppCompatActivity implements Async_Callback{
+    public static final int PLACE_TO_TIME = 4;
+
     public ListView listView;
     public ArrayAdapter<String> adapter;
     FirebaseFirestore db;
@@ -42,9 +44,10 @@ public class Display_Places extends AppCompatActivity implements Async_Callback{
         spinner.setOnItemSelectedListener(new SpinnerSelectedListener());
 
         listView = findViewById(R.id.list);
+        listView.setOnItemClickListener(new ClickListener());
+
         adapter = new ArrayAdapter<>(Display_Places.this, android.R.layout.simple_list_item_1,common.getPlace_list());
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new ClickListener());
 
     }
 
@@ -52,12 +55,12 @@ public class Display_Places extends AppCompatActivity implements Async_Callback{
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id){
             String string =(String)parent.getItemAtPosition(position);
-
             common.setPlace_name(string);
 
             if(common.getPlace_name() != common.getCurrent_str()) {
                 common.setCurrent_str(string);
-                common.setState(4);
+                common.setDay("平日");
+                common.setState(PLACE_TO_TIME);
 
                 data.getDataList(common, new Async_Callback() {
                     public void sendData(List<String> list) {
@@ -101,7 +104,6 @@ public class Display_Places extends AppCompatActivity implements Async_Callback{
                             common.setPlace_list(list);
                             adapter = new ArrayAdapter<>(Display_Places.this,
                                     android.R.layout.simple_list_item_1, common.getPlace_list());
-                            Log.d("aaaaa",String.valueOf(common.getPlace_list()));
                             listView.setAdapter(adapter);
                         }
                     }

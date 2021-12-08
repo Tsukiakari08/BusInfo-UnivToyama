@@ -15,6 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 public class Display_Prefectures extends AppCompatActivity implements Async_Callback{
+    public static final int PREFECTURE_TO_CITY = 0;
     public ListView listView;
     Common common;
 
@@ -39,7 +40,7 @@ public class Display_Prefectures extends AppCompatActivity implements Async_Call
 
             if(common.getPrefecture_name() != common.getCurrent_str()) {
                 common.setCurrent_str(string);
-                common.setState(0);
+                common.setState(PREFECTURE_TO_CITY);
 
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 GetData_Firestore data = new GetData_Firestore(db);

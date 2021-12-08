@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Display_Times extends AppCompatActivity implements Async_Callback{
+    public static final int PLACE_TO_TIME = 4;
     public ListView listView;
     public ArrayAdapter<String> adapter;
     Spinner spinner;
@@ -31,19 +32,11 @@ public class Display_Times extends AppCompatActivity implements Async_Callback{
         common = (Common)getApplication();
         common.initCurrent_str();
 
-        SetSpinnerItem();
         spinner = findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(new SpinnerSelectedListener());
 
         listView = findViewById(R.id.list);
         listView.setEmptyView(findViewById(R.id.emptyView));
-    }
-
-    public void SetSpinnerItem(){
-        spinner = findViewById(R.id.spinner);
-        adapter = new ArrayAdapter<>(Display_Times.this,  android.R.layout.simple_spinner_item, common.getDirection_list());
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
     }
 
     private class SpinnerSelectedListener implements AdapterView.OnItemSelectedListener {
@@ -59,8 +52,8 @@ public class Display_Times extends AppCompatActivity implements Async_Callback{
             GetData_Firestore data = new GetData_Firestore(db);
 
             if(common.getDirection() != common.getCurrent_str()) {
-                common.setDirection(string);
-                common.setState(4);
+                common.setDay(string);
+                common.setState(PLACE_TO_TIME);
 
                 data.getDataList(common, new Async_Callback() {
                     public void sendData(List<String> list) {
@@ -68,15 +61,16 @@ public class Display_Times extends AppCompatActivity implements Async_Callback{
                             Log.d("List Error", "Empty List");
                         } else {
                             common.setTime_list(list);
+                            Log.d("AAAAA",common.getTime_list().get(0));
                             adapter = new ArrayAdapter<>(Display_Times.this,
                                     android.R.layout.simple_list_item_1, common.getTime_list());
 
                             if(common.getTime_list().size() == 1) {
                                 adapter.clear();
-                                listView.setAdapter(adapter);
                             } else {
-                                listView.setAdapter(adapter);
+
                             }
+                            listView.setAdapter(adapter);
                         }
                     }
                 });

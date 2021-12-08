@@ -15,7 +15,7 @@ import java.util.List;
 public class GetData_Firestore implements Async_Callback{
 
     public String get_data;                                 //取得したデータの格納先
-    private static final String TAG = "DocSnippets";
+    private static final String TAG = "Error";              //Logのタグ
     public static final int PREFECTURE_TO_CITY = 0;
     public static final int CITY_TO_LINE= 1;
     public static final int DIRECTION = 2;
@@ -42,7 +42,7 @@ public class GetData_Firestore implements Async_Callback{
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         ArrayList<String> al = toArrayList(document, common);
                         if (al.isEmpty() || al.size() == 0) {
-
+                            //リストが空の場合
                         } else {
                             list.addAll(al);  //listにデータの追加
                         }
@@ -58,7 +58,6 @@ public class GetData_Firestore implements Async_Callback{
     //pathの設定
     public CollectionReference collectionPath(FirebaseFirestore db, Common common){
         CollectionReference collectionRef = db.collection("NULL");
-
         switch (common.getState()) {
             case PREFECTURE_TO_CITY:
                 collectionRef = db.collection(common.getPrefecture_name());
@@ -83,23 +82,23 @@ public class GetData_Firestore implements Async_Callback{
         return collectionRef;
     }
 
-    //条件付きクエリの実行
+    //条件付きクエリ
     public Query executeQuery(CollectionReference collectionRef, Common common){
-        Query q = collectionRef;
+        Query query = collectionRef;
         switch (common.getState()) {
             case DIRECTION:
-                q = collectionRef.whereEqualTo("direction_data", true);
+                query = collectionRef.whereEqualTo("direction_data", true);
                 break;
 
             case LINE_TO_PLACE:
-                q = collectionRef.whereEqualTo("方向", common.getDirection());
+                query = collectionRef.whereEqualTo("方向", common.getDirection());
                 break;
 
             case PLACE_TO_TIME:
+                query = collectionRef.whereEqualTo("day", common.getDay());
                 break;
         }
-
-        return q;
+        return query;
     }
 
 
@@ -121,7 +120,6 @@ public class GetData_Firestore implements Async_Callback{
             break;
 
             case PLACE_TO_TIME: list = bus.getTime();
-            Log.d(TAG, String.valueOf(bus.getTime().size()));
             break;
         }
         return list;

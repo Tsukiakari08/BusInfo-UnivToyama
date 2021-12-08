@@ -8,11 +8,13 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:entries="@array/prefectures"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:entries="@array/days" />
 
     <ListView
         android:id="@+id/list"

@@ -15,6 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 public class Display_Cities extends AppCompatActivity implements Async_Callback{
+    public static final int CITY_TO_LINE= 1;
     public ListView listView;
     Common common;
 
@@ -42,7 +43,7 @@ public class Display_Cities extends AppCompatActivity implements Async_Callback{
 
             if(common.getCity_name() != common.getCurrent_str()) {
                 common.setCurrent_str(string);
-                common.setState(1);
+                common.setState(CITY_TO_LINE);
 
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 GetData_Firestore data = new GetData_Firestore(db);

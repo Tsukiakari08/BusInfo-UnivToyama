@@ -6,4 +6,9 @@
         <item>福井県</item>
     </string-array>
 
+    <string-array name="days">
+        <item>平日</item>
+        <item>休日</item>
+    </string-array>
+
 </resources>
