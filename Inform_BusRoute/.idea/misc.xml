@@ -5,8 +5,11 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.12864583333333332" />
         <entry key="app/src/main/res/layout/activity_display_cities.xml" value="0.12800417972831765" />
+        <entry key="app/src/main/res/layout/activity_display_lines.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_display_places.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_display_places2.xml" value="0.12760416666666666" />
         <entry key="app/src/main/res/layout/activity_display_prefectures.xml" value="0.12121212121212122" />
-        <entry key="app/src/main/res/layout/activity_display_times.xml" value="0.10977809219621122" />
+        <entry key="app/src/main/res/layout/activity_display_times.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
     </option>

@@ -33,10 +33,18 @@ public class Display_Times extends AppCompatActivity implements Async_Callback{
         common.initCurrent_str();
 
         spinner = findViewById(R.id.spinner);
+        SetSpinnerItem();
         spinner.setOnItemSelectedListener(new SpinnerSelectedListener());
 
         listView = findViewById(R.id.list);
         listView.setEmptyView(findViewById(R.id.emptyView));
+    }
+
+    public void SetSpinnerItem() {
+        adapter = new ArrayAdapter<>(Display_Times.this,
+                android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.days));
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown);
+        spinner.setAdapter(adapter);
     }
 
     private class SpinnerSelectedListener implements AdapterView.OnItemSelectedListener {

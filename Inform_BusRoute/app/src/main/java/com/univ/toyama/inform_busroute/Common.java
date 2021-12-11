@@ -24,7 +24,6 @@ public class Common extends Application{
     public void initCurrent_str(){current_str = "";}
 
     //setter
-
     public void setPrefecture_name(String prefecture_name) { this.prefecture_name = prefecture_name; }
 
     public void setCity_name(String city_name) { this.city_name = city_name; }

@@ -18,6 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class Display_Places extends AppCompatActivity implements Async_Callback{
+    public static final int LINE_TO_PLACE = 3;
     public static final int PLACE_TO_TIME = 4;
 
     public ListView listView;
@@ -30,18 +31,24 @@ public class Display_Places extends AppCompatActivity implements Async_Callback{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_places);
-        Intent display_Places = getIntent();
-
         common = (Common)getApplication();
         common.initCurrent_str();
 
+        if(common.getDirection_list().size() == 1){
+            setContentView(R.layout.activity_display_places2);
+
+        } else {
+            setContentView(R.layout.activity_display_places);
+
+            spinner = findViewById(R.id.spinner);
+            SetSpinnerItem();
+            spinner.setOnItemSelectedListener(new SpinnerSelectedListener());
+        }
+
+        Intent display_Places = getIntent();
+
         db = FirebaseFirestore.getInstance();
         data = new GetData_Firestore(db);
-
-        SetSpinnerItem();
-        spinner = findViewById(R.id.spinner);
-        spinner.setOnItemSelectedListener(new SpinnerSelectedListener());
 
         listView = findViewById(R.id.list);
         listView.setOnItemClickListener(new ClickListener());
@@ -77,10 +84,9 @@ public class Display_Places extends AppCompatActivity implements Async_Callback{
         }
     }
 
-    public void SetSpinnerItem(){
-        spinner = findViewById(R.id.spinner);
-        adapter = new ArrayAdapter<>(Display_Places.this,  android.R.layout.simple_spinner_item, common.getDirection_list());
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    public void SetSpinnerItem() {
+        adapter = new ArrayAdapter<>(Display_Places.this, android.R.layout.simple_spinner_item, common.getDirection_list());
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown);
         spinner.setAdapter(adapter);
     }
 
@@ -94,7 +100,7 @@ public class Display_Places extends AppCompatActivity implements Async_Callback{
             common.setCurrent_str(string);
             if(common.getDirection() != common.getCurrent_str()) {
                 common.setDirection(string);
-                common.setState(3);
+                common.setState(LINE_TO_PLACE);
 
                 data.getDataList(common, new Async_Callback() {
                     public void sendData(List<String> list) {
