@@ -66,7 +66,7 @@ public class Display_Places extends AppCompatActivity implements Async_Callback{
 
             if(common.getPlace_name() != common.getCurrent_str()) {
                 common.setCurrent_str(string);
-                common.setDay("平日");
+                common.setDay(getResources().getStringArray(R.array.days)[0]);   //strings.smlの配列daysの0番要素をセット
                 common.setState(PLACE_TO_TIME);
 
                 data.getDataList(common, new Async_Callback() {
