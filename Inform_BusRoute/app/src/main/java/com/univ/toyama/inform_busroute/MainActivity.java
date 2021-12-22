@@ -11,21 +11,31 @@ import android.widget.ListView;
 
 
 public class MainActivity extends AppCompatActivity{
-    public Button timetable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        timetable = findViewById(R.id.timetable);
-        timetable.setOnClickListener(new ClickListener());
+        Button timetable = findViewById(R.id.timetable);
+        Button bluetooth = findViewById(R.id.bluetooth);
+
+        timetable.setOnClickListener(new T_ClickListener());
+        bluetooth.setOnClickListener(new B_ClickListener());
     }
 
-    private class ClickListener implements View.OnClickListener{
+    private class T_ClickListener implements View.OnClickListener{
         @Override
         public void onClick(View view){
             Intent display_Prefectures = new Intent(MainActivity.this, Display_Prefectures.class);
             startActivity(display_Prefectures);
+        }
+    }
+
+    private class B_ClickListener implements View.OnClickListener{
+        @Override
+        public void onClick(View view){
+            Intent Bluetooth = new Intent(MainActivity.this, BluetoothActivity.class);
+            startActivity(Bluetooth);
         }
     }
 }

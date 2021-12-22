@@ -1,5 +1,34 @@
 <resources>
-    <string name="app_name">Inform_BusRoute</string>
+    <string name="app_name"> </string>
+    <string name="timetable"> 時刻表</string>
+    <string name="bluetooth"> バス判別 </string>
+
+    <!-- MainActivity トースト用 -->
+    <string name="bluetooth_is_not_supported">Bluetooth is not supported.</string>
+    <string name="bluetooth_is_not_working">Bluetooth is not working.</string>
+
+    <!-- MainActivity メニュー用 -->
+    <string name="search">Search</string>
+
+    <!-- MainActivity ラベル用 -->
+    <string name="device_name">Device Name : </string>
+    <string name="device_address">Device Address : </string>
+
+    <!-- DeviceListActivity トースト用 -->
+    <string name="unknown_device">Unknown device</string>
+
+    <!-- DeviceListActivity メニュー用 -->
+    <string name="scan">Scan</string>
+    <string name="stop">Stop</string>
+
+    <string name="text">Test AlertDialog</string>
+    <string name="button">Button</string>
+
+    <!--画像とテキストの交換陽-->
+    <string name="button3">Button</string>
+    <string name="text3">"Test Canvas\nBitMap amp Text"</string>
+
+
     <string-array name="prefectures">
         <item>富山県</item>
         <item>石川県</item>

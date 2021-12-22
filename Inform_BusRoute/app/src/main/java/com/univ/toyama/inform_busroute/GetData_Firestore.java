@@ -9,6 +9,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.protobuf.StringValue;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,6 +63,7 @@ public class GetData_Firestore implements Async_Callback{
         switch (common.getState()) {
             case PREFECTURE_TO_CITY:
                 collectionRef = db.collection(common.getPrefecture_name());
+                Log.d(TAG,common.getPrefecture_name());
                 break;
 
             case CITY_TO_LINE:
