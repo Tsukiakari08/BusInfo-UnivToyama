@@ -8,14 +8,14 @@
         <entry key="app/src/main/res/drawable/button_radious_corner.xml" value="0.14375" />
         <entry key="app/src/main/res/drawable/drawable_button.xml" value="0.14375" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.14375" />
-        <entry key="app/src/main/res/layout/activity_bluetooth.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_bluetooth.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_display_cities.xml" value="0.12800417972831765" />
         <entry key="app/src/main/res/layout/activity_display_lines.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_display_places.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_display_places2.xml" value="0.12760416666666666" />
         <entry key="app/src/main/res/layout/activity_display_prefectures.xml" value="0.12121212121212122" />
         <entry key="app/src/main/res/layout/activity_display_times.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/listitem_device.xml" value="0.1" />
         <entry key="app/src/main/res/layout/spinner_dropdown.xml" value="0.16075219270048013" />
         <entry key="app/src/main/res/menu/activity_bluetooth.xml" value="0.12760416666666666" />

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> </string>
+    <string name="app_name"> Inform_BusRoute</string>
     <string name="timetable"> 時刻表</string>
     <string name="bluetooth"> バス判別 </string>
 

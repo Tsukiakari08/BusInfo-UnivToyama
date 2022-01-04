@@ -30,11 +30,6 @@ public class Bus {
         return city;
     }
 
-    @PropertyName("route")
-    public ArrayList<String> getRoute() {
-        return route;
-    }
-
     @PropertyName("line")
     public ArrayList<String> getLine() {
         return line;

@@ -49,10 +49,6 @@ public class BluetoothActivity extends AppCompatActivity
         setContentView(R.layout.activity_bluetooth);
         Intent intent = getIntent();
 
-        //画像とテキスト切り替え
-        TextView label = this.findViewById(R.id.label);
-        label.setText(getString(R.string.text3));
-
         testCanvasView = this.findViewById(R.id.test_view1);
         testCanvasView.showCanvas(true);
 
